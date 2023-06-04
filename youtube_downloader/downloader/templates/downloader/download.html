@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Downloader</title>
+</head>
+<body>
+    <h1>YouTube Downloader</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="post" action="{% url 'download' %}">
+        {% csrf_token %}
+        <input type="text" name="video_url" placeholder="Enter YouTube video URL" required>
+        <button type="submit">Download</button>
+    </form>
+</body>
+</html>
